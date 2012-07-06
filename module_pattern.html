@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	
+	
+	</head>
+	<body>
+
+		<h1>BFitz is learning Git and OO javascript!</h1>
+		
+		<a href="#" id="btn" style="background: blue; padding: 10px; border-radius: 6px; border: 1px solid navy; color: white; text-decoration: none;">I am a button</a>
+		<div id="panel" style="display: none; width: 150px; background: red; padding: 20px; color: white; position: relative; top: 15px;">
+			I am the panel
+		</div>
+
+
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+		<script type="text/javascript">
+			
+			var btn = (function($){
+				
+				$btn = $("#btn");
+				$panel = $("#panel");
+				
+				function fadeIn(){
+					$panel.fadeIn();
+				}
+				
+				function fadeOut(){
+					$panel.fadeOut();
+				}
+				
+				return {
+					
+					bind_events: function(){
+						$btn.bind("mouseover", fadeIn).bind("mouseout", fadeOut);
+					},
+					
+					unbind_events: function(){
+						$btn.unbind("mouseover", fadeIn).unbind("mouseout", fadeOut);
+					}				
+					
+				}
+				
+			}(jQuery));
+			
+			
+			btn.bind_events();
+		
+		
+		</script>
+	</body>
+
+
+</html>
